@@ -71,8 +71,14 @@
 			}
 
 			&:hover {
-				background: #333;
-				flex-basis: 150%;
+				&::before {
+					content: "";
+					position: absolute;
+					inset: -10px;
+					background: #333;
+					z-index: -1;
+					border-radius: inherit;
+				}
 
 				button span {
 					color: var(--kakao);
@@ -107,8 +113,8 @@
 	}
 	
 	@keyframes jump {
-		0% {margin-bottom: 10px;}
-		50% {margin-bottom: 0px;}
+		0% {transform: translateY(-5px);}
+		50% {transform: none;}
 	}
 
 </style>
@@ -121,18 +127,18 @@
 		<li><button><span class="material-symbols-outlined">favorite</span><span>찜</span></button></li>
 		<li><button><span class="material-symbols-outlined">notifications</span><span>알림</span></button></li>
 		<li><button><span class="material-symbols-outlined">person</span><span>내정보</span></button></li>
-		<li><button><span class="material-symbols-outlined">settings</span><span>setting</span></button></li>
-		<li><button><span class="material-symbols-outlined">add</span><span>add</span></button></li>
-		<li><button><span class="material-symbols-outlined">delete</span><span>delete</span></button></li>
-		<li><button><span class="material-symbols-outlined">star</span><span>star</span></button></li>
-		<li><button><span class="material-symbols-outlined">download</span><span>download</span></button></li>
-		<li><button><span class="material-symbols-outlined">sync</span><span>sync</span></button></li>
-		<li><button><span class="material-symbols-outlined">stacks</span><span>stacks</span></button></li>
-		<li><button><span class="material-symbols-outlined">thumb_up</span><span>up</span></button></li>
-		<li><button><span class="material-symbols-outlined">support_agent</span><span>support</span></button></li>
-		<li><button><span class="material-symbols-outlined">rocket_launch</span><span>rocket</span></button></li>
-		<li><button><span class="material-symbols-outlined">pets</span><span>pets</span></button></li>
-		<li><button><span class="material-symbols-outlined">water_drop</span><span>water</span></button></li>
+		<li><button><span class="material-symbols-outlined">settings</span><span>설정</span></button></li>
+		<li><button><span class="material-symbols-outlined">add</span><span>추가</span></button></li>
+		<li><button><span class="material-symbols-outlined">delete</span><span>삭제</span></button></li>
+		<li><button><span class="material-symbols-outlined">star</span><span>추천</span></button></li>
+		<li><button><span class="material-symbols-outlined">download</span><span>저장</span></button></li>
+		<li><button><span class="material-symbols-outlined">sync</span><span>동기화</span></button></li>
+		<li><button><span class="material-symbols-outlined">stacks</span><span>스택</span></button></li>
+		<li><button><span class="material-symbols-outlined">thumb_up</span><span>따봉</span></button></li>
+		<li><button><span class="material-symbols-outlined">support_agent</span><span>고객상담</span></button></li>
+		<li><button><span class="material-symbols-outlined">rocket_launch</span><span>로켓</span></button></li>
+		<li><button><span class="material-symbols-outlined">pets</span><span>펫</span></button></li>
+		<li><button><span class="material-symbols-outlined">water_drop</span><span>물</span></button></li>
 	</nav>
 
 </body>
