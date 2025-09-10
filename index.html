@@ -82,11 +82,28 @@
 			animation: jump calc(sibling-count() * 0.1s) calc(abs(var(--index) - sibling-index()) * 0.1s) infinite;
 			animation-play-state: paused;
 		}
-		
+
 		&:has(:hover) li {
 			animation-play-state: running;
 		}
 
+		&:has(li:nth-child(1):hover) {--index: 1;}
+		&:has(li:nth-child(2):hover) {--index: 2;}
+		&:has(li:nth-child(3):hover) {--index: 3;}
+		&:has(li:nth-child(4):hover) {--index: 4;}
+		&:has(li:nth-child(5):hover) {--index: 5;}
+		&:has(li:nth-child(6):hover) {--index: 6;}
+		&:has(li:nth-child(7):hover) {--index: 7;}
+		&:has(li:nth-child(8):hover) {--index: 8;}
+		&:has(li:nth-child(9):hover) {--index: 9;}
+		&:has(li:nth-child(10):hover) {--index: 10;}
+		&:has(li:nth-child(11):hover) {--index: 11;}
+		&:has(li:nth-child(12):hover) {--index: 12;}
+		&:has(li:nth-child(13):hover) {--index: 13;}
+		&:has(li:nth-child(14):hover) {--index: 14;}
+		&:has(li:nth-child(15):hover) {--index: 15;}
+		&:has(li:nth-child(16):hover) {--index: 16;}
+		&:has(li:nth-child(17):hover) {--index: 17;}
 	}
 	
 	@keyframes jump {
@@ -121,10 +138,10 @@
 </body>
 
 <script>
-	document.querySelectorAll("li").forEach((e, i, a) => {
-		e.addEventListener("pointerenter", () => {
-			e.closest("nav").style.setProperty("--index", i)
-		})
-	})
+	// document.querySelectorAll("li").forEach((e, i, a) => {
+	// 	e.addEventListener("pointerenter", () => {
+	// 		e.closest("nav").style.setProperty("--index", i + 1)
+	// 	})
+	// })
 </script>
 </html>
