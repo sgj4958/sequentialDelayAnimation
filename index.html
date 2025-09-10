@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+    body {
+        border: 1px solid #ddd;
+        margin: 5px;
+        overflow: hidden;
+        width: calc(100% - 10px);
+        height: calc(100vh - 10px);
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+    }
+
+    /* //// */
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		list-style: none;
+		font-family: 'Noto sans kr';
+		color: #333;
+	}
+	
+	:root {
+		--kakao: #FEE500;
+	}
+
+	nav {
+		width: 100%;
+		height: 60px;
+		position: relative;
+		background-color: #fff;
+		filter: drop-shadow(0 0px 1px #0005);
+
+		div {
+			position: absolute;
+			inset: 0;
+			display: flex;
+			z-index: 1;
+			justify-content: space-around;
+			align-items: center;
+			
+			li {
+				aspect-ratio: 1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 50%;
+
+				button {
+					width: 100%;
+					height: 100%;
+					appearance: none;
+					border: none;
+					background: none;
+					cursor: pointer;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					
+					span {
+						font-size: 12px;
+						&.material-symbols-outlined {
+							font-size: 26px;
+						}
+					}
+				}
+
+				&:hover {
+					background: #333;
+					width: calc(100% / sibling-count() * 2);
+
+					button span {
+						color: var(--kakao);
+					}
+				}
+				
+				animation: jump calc(sibling-count() * 0.1s) calc(abs(var(--index) - sibling-index()) * 0.1s) infinite;
+				animation-play-state: paused;
+			}
+			&:has(:hover) li {
+				animation-play-state: running;
+			}
+		}
+	}
+	
+	@keyframes jump {
+		0% {margin-bottom: 10px;}
+		50% {margin-bottom: 0px;}
+	}
+
+</style>
+</head>
+<body>
+
+	<nav>
+		<div>
+			<li><button><span class="material-symbols-outlined">home</span><span>Home</span></button></li>
+			<li><button><span class="material-symbols-outlined">search</span><span>검색</span></button></li>
+			<li><button><span class="material-symbols-outlined">favorite</span><span>찜</span></button></li>
+			<li><button><span class="material-symbols-outlined">notifications</span><span>알림</span></button></li>
+			<li><button><span class="material-symbols-outlined">person</span><span>내정보</span></button></li>
+			<li><button><span class="material-symbols-outlined">settings</span><span>setting</span></button></li>
+			<li><button><span class="material-symbols-outlined">add</span><span>add</span></button></li>
+			<li><button><span class="material-symbols-outlined">delete</span><span>delete</span></button></li>
+			<li><button><span class="material-symbols-outlined">star</span><span>star</span></button></li>
+			<li><button><span class="material-symbols-outlined">download</span><span>download</span></button></li>
+			<li><button><span class="material-symbols-outlined">sync</span><span>sync</span></button></li>
+			<li><button><span class="material-symbols-outlined">stacks</span><span>stacks</span></button></li>
+			<li><button><span class="material-symbols-outlined">thumb_up</span><span>up</span></button></li>
+			<li><button><span class="material-symbols-outlined">support_agent</span><span>support</span></button></li>
+			<li><button><span class="material-symbols-outlined">rocket_launch</span><span>rocket</span></button></li>
+			<li><button><span class="material-symbols-outlined">pets</span><span>pets</span></button></li>
+			<li><button><span class="material-symbols-outlined">water_drop</span><span>water</span></button></li>
+		</div>
+	</nav>
+
+</body>
+
+<script>
+	document.querySelectorAll("li").forEach((e, i, a) => {
+		e.addEventListener("pointerenter", () => {
+			e.closest("nav").style.setProperty("--index", i)
+		})
+	})
+</script>
+</html>
